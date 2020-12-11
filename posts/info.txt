@@ -1,1 +1,1 @@
-In this folder, all the images and videos uploaded in the chats will be saved.
+In this folder, all the images and videos uploaded as posts will be saved.
