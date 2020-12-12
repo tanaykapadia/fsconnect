@@ -118,6 +118,31 @@
         $deletequery = "DELETE FROM posts WHERE postID = '$postID'";
         $dquery = mysqli_query($conn,$deletequery);
     }
+    if (isset($_POST["delete16"])) {
+        $postID = 16;
+        $deletequery = "DELETE FROM posts WHERE postID = '$postID'";
+        $dquery = mysqli_query($conn,$deletequery);
+    }
+    if (isset($_POST["delete17"])) {
+        $postID = 17;
+        $deletequery = "DELETE FROM posts WHERE postID = '$postID'";
+        $dquery = mysqli_query($conn,$deletequery);
+    }
+    if (isset($_POST["delete18"])) {
+        $postID = 18;
+        $deletequery = "DELETE FROM posts WHERE postID = '$postID'";
+        $dquery = mysqli_query($conn,$deletequery);
+    }
+    if (isset($_POST["delete19"])) {
+        $postID = 19;
+        $deletequery = "DELETE FROM posts WHERE postID = '$postID'";
+        $dquery = mysqli_query($conn,$deletequery);
+    }
+    if (isset($_POST["delete20"])) {
+        $postID = 20;
+        $deletequery = "DELETE FROM posts WHERE postID = '$postID'";
+        $dquery = mysqli_query($conn,$deletequery);
+    }
     $selectquery = "SELECT * FROM posts WHERE username = '$username' ORDER BY postID DESC";
     $squery = mysqli_query($conn,$selectquery);
     if ($squery->num_rows > 0) {
@@ -131,7 +156,7 @@
                 $postContent = "<video class='feedVideo' controls><source src='posts/" . $row["video"] . "'></video><br><br>Likes: " . $row["likes"];
             }
             $nameID = "delete" . $row["postID"];
-            $feedHTML = $feedHTML . "<tr class='feedTable'><td class='feedTable content'>" . $postContent . "<br><form action='' method='POST'><input type='submit' value='Delete Post' name='" . $nameID . "' id='" . $nameID . "' class='deleteButton'></form></td></tr>";
+            $feedHTML = $feedHTML . "<tr class='feedTable'><td class='feedTable content'>" . $postContent . "<br><form id='deletePostForm' action='' method='POST'><input type='submit' value='Delete Post' name='" . $nameID . "' id='" . $nameID . "' class='deleteButton'></td></tr>";
             while ($row = $squery->fetch_assoc()) {
                 if (!$row["photo"] && !$row["video"]) {
                     $postContent = $row["text"] . "<br><br>Likes: " . $row["likes"];
@@ -141,10 +166,10 @@
                     $postContent = "<video class='feedVideo' controls><source src='posts/" . $row["video"] . "'></video><br><br>Likes: " . $row["likes"];
                 }
                 $nameID = "delete" . $row["postID"];
-                $feedHTML = $feedHTML . "<tr class='feedTable'><td class='feedTable content'>" . $postContent . "<br><form action='' method='POST'><input type='submit' value='Delete Post' name='" . $nameID . "' id='" . $nameID . "' class='deleteButton'></form></td></tr>";
+                $feedHTML = $feedHTML . "<tr class='feedTable'><td class='feedTable content'>" . $postContent . "<br><input type='submit' value='Delete Post' name='" . $nameID . "' id='" . $nameID . "' class='deleteButton'></td></tr>";
             }
         }
-        $feedHTML = $feedHTML . "</table>";
+        $feedHTML = $feedHTML . "</form></table>";
     }
 ?>
 <html>
@@ -257,7 +282,7 @@
             </div>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <li class="nav-item active">
-                    <a class="nav-link" href="calls.php"><img src="logos/calls.png" height="28" class="pagelogos"> &nbsp;<span class="pagelinks">Calls</span></a>
+                    <a class="nav-link" href="calls"><img src="logos/calls.png" height="28" class="pagelogos"> &nbsp;<span class="pagelinks">Calls</span></a>
                 </li>
             </div>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
@@ -272,6 +297,12 @@
             </div>
             </ul>
         </nav>
+        <script type="text/javascript">
+            var el = document.getElementById('deletePostForm');
+            el.addEventListener('submit', function(){
+                return confirm('Are you sure you want to submit this form?');
+            }, false);
+        </script>
         <?php echo $feedHTML; ?>
         <div class="mainBody">
             <div id="usernameInformation">Account Username - <?php echo $_SESSION["username"]; ?></div><br>
