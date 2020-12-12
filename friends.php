@@ -119,44 +119,24 @@
             $removemessage = "<label id='error'>@" . $removingUsername . " was never following you.</label>";
         }
     }
-    if (isset($_POST["accepttanay"])) {
-        $query = "DELETE FROM followrequest WHERE follower = 'tanay' AND following = '$username'; INSERT INTO following (follower, following) VALUES ('tanay', '$username');";
-        if (!$conn->multi_query($query)) {
-            echo "Multi query failed: (" . $mysqli->errno . ") " . $mysqli->error;
-        }
-    }
-    if (isset($_POST["rejecttanay"])) {
-        $deletequery = "DELETE FROM followrequest WHERE follower = 'tanay' AND following = '$username'";
-        $dquery = mysqli_query($conn,$deletequery);
-    }
-    if (isset($_POST["accepttanaykapadia"])) {
-        $query = "DELETE FROM followrequest WHERE follower = 'tanaykapadia' AND following = '$username'; INSERT INTO following (follower, following) VALUES ('tanaykapadia', '$username');";
-        if (!$conn->multi_query($query)) {
-            echo "Multi query failed: (" . $mysqli->errno . ") " . $mysqli->error;
-        }
-    }
-    if (isset($_POST["rejecttanaykapadia"])) {
-        $deletequery = "DELETE FROM followrequest WHERE follower = 'tanaykapadia' AND following = '$username'";
-        $dquery = mysqli_query($conn,$deletequery);
-    }
     if (isset($_POST["acceptuser1"])) {
         $query = "DELETE FROM followrequest WHERE follower = 'user1' AND following = '$username'; INSERT INTO following (follower, following) VALUES ('user1', '$username');";
         if (!$conn->multi_query($query)) {
-            echo "Multi query failed: (" . $mysqli->errno . ") " . $mysqli->error;
+            echo "<script>alert('Multi query failed: " . $mysqli->error . "');</script>";
         }
     }
     if (isset($_POST["rejectuser1"])) {
         $deletequery = "DELETE FROM followrequest WHERE follower = 'user1' AND following = '$username'";
         $dquery = mysqli_query($conn,$deletequery);
     }
-    if (isset($_POST["acceptjohndoe"])) {
-        $query = "DELETE FROM followrequest WHERE follower = 'johndoe' AND following = '$username'; INSERT INTO following (follower, following) VALUES ('johndoe', '$username');";
+    if (isset($_POST["acceptuser2"])) {
+        $query = "DELETE FROM followrequest WHERE follower = 'user2' AND following = '$username'; INSERT INTO following (follower, following) VALUES ('user2', '$username');";
         if (!$conn->multi_query($query)) {
-            echo "Multi query failed: (" . $mysqli->errno . ") " . $mysqli->error;
+            echo "<script>alert('Multi query failed: " . $mysqli->error . "');</script>";
         }
     }
-    if (isset($_POST["rejectjohndoe"])) {
-        $deletequery = "DELETE FROM followrequest WHERE follower = 'johndoe' AND following = '$username'";
+    if (isset($_POST["rejectuser2"])) {
+        $deletequery = "DELETE FROM followrequest WHERE follower = 'user1' AND following = '$username'";
         $dquery = mysqli_query($conn,$deletequery);
     }
 ?>
@@ -216,7 +196,7 @@
             </div>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <li class="nav-item active">
-                    <a class="nav-link" href="calls.php"><img src="logos/calls.png" height="28" class="pagelogos"> &nbsp;<span class="pagelinks">Calls</span></a>
+                    <a class="nav-link" href="calls"><img src="logos/calls.png" height="28" class="pagelogos"> &nbsp;<span class="pagelinks">Calls</span></a>
                 </li>
             </div>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
