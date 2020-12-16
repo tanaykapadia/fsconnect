@@ -15,7 +15,7 @@
     $conn = mysqli_connect($server, $user, $pass, $db);
     if (isset($_POST["createTextPost"])) {
         $text = $_POST["text"];
-        if(!empty($text) && preg_match("/[a-z]/i", $text)){
+        if(!empty($text)){
             $insertquery = "INSERT INTO posts (username,text,likes) VALUES ('$username','$text',0)";
             $iquery = mysqli_query($conn,$insertquery);
             if ($iquery) {
@@ -46,7 +46,7 @@
         $file_size = $_FILES['video']['size'];
         $file_tmp = $_FILES['video']['tmp_name'];
         $file_type= $_FILES['video']['type'];
-        $folder = "posts/" . $file_name; 
+        $folder = "posts/" . $file_name;
         $insertquery = "INSERT INTO posts (username,video,likes) VALUES ('$username','$file_name',0)";
         $iquery = mysqli_query($conn,$insertquery);
         if ($iquery && move_uploaded_file($file_tmp, $folder)) {
@@ -168,111 +168,221 @@
     if (isset($_POST["like11"])) {
         $postID = 11;
         $selectquery = "SELECT likes FROM posts WHERE postID = '$postID'";
+        $squery = mysqli_query($conn,$selectquery);
         while ($row = $squery->fetch_assoc()) {
             $currentLikes = $row["likes"];
         }
         $newLikes = (1 * $currentLikes) + 1;
         $insertquery = "UPDATE posts SET likes='$newLikes' WHERE postID = '$postID'";
-           $squery = mysqli_query($conn,$selectquery);
         $iquery = mysqli_query($conn,$insertquery);
     }
     if (isset($_POST["like12"])) {
         $postID = 12;
         $selectquery = "SELECT likes FROM posts WHERE postID = '$postID'";
+        $squery = mysqli_query($conn,$selectquery);
         while ($row = $squery->fetch_assoc()) {
             $currentLikes = $row["likes"];
         }
         $newLikes = (1 * $currentLikes) + 1;
         $insertquery = "UPDATE posts SET likes='$newLikes' WHERE postID = '$postID'";
-           $squery = mysqli_query($conn,$selectquery);
         $iquery = mysqli_query($conn,$insertquery);
     }
     if (isset($_POST["like13"])) {
         $postID = 13;
         $selectquery = "SELECT likes FROM posts WHERE postID = '$postID'";
+        $squery = mysqli_query($conn,$selectquery);
         while ($row = $squery->fetch_assoc()) {
             $currentLikes = $row["likes"];
         }
         $newLikes = (1 * $currentLikes) + 1;
         $insertquery = "UPDATE posts SET likes='$newLikes' WHERE postID = '$postID'";
-           $squery = mysqli_query($conn,$selectquery);
         $iquery = mysqli_query($conn,$insertquery);
     }
     if (isset($_POST["like14"])) {
         $postID = 14;
         $selectquery = "SELECT likes FROM posts WHERE postID = '$postID'";
+        $squery = mysqli_query($conn,$selectquery);
         while ($row = $squery->fetch_assoc()) {
             $currentLikes = $row["likes"];
         }
         $newLikes = (1 * $currentLikes) + 1;
         $insertquery = "UPDATE posts SET likes='$newLikes' WHERE postID = '$postID'";
-           $squery = mysqli_query($conn,$selectquery);
         $iquery = mysqli_query($conn,$insertquery);
     }
     if (isset($_POST["like15"])) {
         $postID = 15;
         $selectquery = "SELECT likes FROM posts WHERE postID = '$postID'";
+        $squery = mysqli_query($conn,$selectquery);
         while ($row = $squery->fetch_assoc()) {
             $currentLikes = $row["likes"];
         }
         $newLikes = (1 * $currentLikes) + 1;
         $insertquery = "UPDATE posts SET likes='$newLikes' WHERE postID = '$postID'";
-           $squery = mysqli_query($conn,$selectquery);
         $iquery = mysqli_query($conn,$insertquery);
     }
     if (isset($_POST["like16"])) {
         $postID = 16;
         $selectquery = "SELECT likes FROM posts WHERE postID = '$postID'";
+        $squery = mysqli_query($conn,$selectquery);
         while ($row = $squery->fetch_assoc()) {
             $currentLikes = $row["likes"];
         }
         $newLikes = (1 * $currentLikes) + 1;
         $insertquery = "UPDATE posts SET likes='$newLikes' WHERE postID = '$postID'";
-           $squery = mysqli_query($conn,$selectquery);
         $iquery = mysqli_query($conn,$insertquery);
     }
     if (isset($_POST["like17"])) {
         $postID = 17;
         $selectquery = "SELECT likes FROM posts WHERE postID = '$postID'";
+        $squery = mysqli_query($conn,$selectquery);
         while ($row = $squery->fetch_assoc()) {
             $currentLikes = $row["likes"];
         }
         $newLikes = (1 * $currentLikes) + 1;
         $insertquery = "UPDATE posts SET likes='$newLikes' WHERE postID = '$postID'";
-           $squery = mysqli_query($conn,$selectquery);
         $iquery = mysqli_query($conn,$insertquery);
     }
     if (isset($_POST["like18"])) {
         $postID = 18;
         $selectquery = "SELECT likes FROM posts WHERE postID = '$postID'";
+        $squery = mysqli_query($conn,$selectquery);
         while ($row = $squery->fetch_assoc()) {
             $currentLikes = $row["likes"];
         }
         $newLikes = (1 * $currentLikes) + 1;
         $insertquery = "UPDATE posts SET likes='$newLikes' WHERE postID = '$postID'";
-           $squery = mysqli_query($conn,$selectquery);
         $iquery = mysqli_query($conn,$insertquery);
     }
     if (isset($_POST["like19"])) {
         $postID = 19;
         $selectquery = "SELECT likes FROM posts WHERE postID = '$postID'";
+        $squery = mysqli_query($conn,$selectquery);
         while ($row = $squery->fetch_assoc()) {
             $currentLikes = $row["likes"];
         }
         $newLikes = (1 * $currentLikes) + 1;
         $insertquery = "UPDATE posts SET likes='$newLikes' WHERE postID = '$postID'";
-           $squery = mysqli_query($conn,$selectquery);
         $iquery = mysqli_query($conn,$insertquery);
     }
     if (isset($_POST["like20"])) {
         $postID = 20;
         $selectquery = "SELECT likes FROM posts WHERE postID = '$postID'";
+        $squery = mysqli_query($conn,$selectquery);
         while ($row = $squery->fetch_assoc()) {
             $currentLikes = $row["likes"];
         }
         $newLikes = (1 * $currentLikes) + 1;
         $insertquery = "UPDATE posts SET likes='$newLikes' WHERE postID = '$postID'";
-           $squery = mysqli_query($conn,$selectquery);
+        $iquery = mysqli_query($conn,$insertquery);
+    }
+    if (isset($_POST["like21"])) {
+        $postID = 21;
+        $selectquery = "SELECT likes FROM posts WHERE postID = '$postID'";
+        $squery = mysqli_query($conn,$selectquery);
+        while ($row = $squery->fetch_assoc()) {
+            $currentLikes = $row["likes"];
+        }
+        $newLikes = (1 * $currentLikes) + 1;
+        $insertquery = "UPDATE posts SET likes='$newLikes' WHERE postID = '$postID'";
+        $iquery = mysqli_query($conn,$insertquery);
+    }
+    if (isset($_POST["like22"])) {
+        $postID = 22;
+        $selectquery = "SELECT likes FROM posts WHERE postID = '$postID'";
+        $squery = mysqli_query($conn,$selectquery);
+        while ($row = $squery->fetch_assoc()) {
+            $currentLikes = $row["likes"];
+        }
+        $newLikes = (1 * $currentLikes) + 1;
+        $insertquery = "UPDATE posts SET likes='$newLikes' WHERE postID = '$postID'";
+        $iquery = mysqli_query($conn,$insertquery);
+    }
+    if (isset($_POST["like23"])) {
+        $postID = 23;
+        $selectquery = "SELECT likes FROM posts WHERE postID = '$postID'";
+        $squery = mysqli_query($conn,$selectquery);
+        while ($row = $squery->fetch_assoc()) {
+            $currentLikes = $row["likes"];
+        }
+        $newLikes = (1 * $currentLikes) + 1;
+        $insertquery = "UPDATE posts SET likes='$newLikes' WHERE postID = '$postID'";
+        $iquery = mysqli_query($conn,$insertquery);
+    }
+    if (isset($_POST["like24"])) {
+        $postID = 24;
+        $selectquery = "SELECT likes FROM posts WHERE postID = '$postID'";
+        $squery = mysqli_query($conn,$selectquery);
+        while ($row = $squery->fetch_assoc()) {
+            $currentLikes = $row["likes"];
+        }
+        $newLikes = (1 * $currentLikes) + 1;
+        $insertquery = "UPDATE posts SET likes='$newLikes' WHERE postID = '$postID'";
+        $iquery = mysqli_query($conn,$insertquery);
+    }
+    if (isset($_POST["like25"])) {
+        $postID = 25;
+        $selectquery = "SELECT likes FROM posts WHERE postID = '$postID'";
+        $squery = mysqli_query($conn,$selectquery);
+        while ($row = $squery->fetch_assoc()) {
+            $currentLikes = $row["likes"];
+        }
+        $newLikes = (1 * $currentLikes) + 1;
+        $insertquery = "UPDATE posts SET likes='$newLikes' WHERE postID = '$postID'";
+        $iquery = mysqli_query($conn,$insertquery);
+    }
+    if (isset($_POST["like26"])) {
+        $postID = 26;
+        $selectquery = "SELECT likes FROM posts WHERE postID = '$postID'";
+        $squery = mysqli_query($conn,$selectquery);
+        while ($row = $squery->fetch_assoc()) {
+            $currentLikes = $row["likes"];
+        }
+        $newLikes = (1 * $currentLikes) + 1;
+        $insertquery = "UPDATE posts SET likes='$newLikes' WHERE postID = '$postID'";
+        $iquery = mysqli_query($conn,$insertquery);
+    }
+    if (isset($_POST["like27"])) {
+        $postID = 27;
+        $selectquery = "SELECT likes FROM posts WHERE postID = '$postID'";
+        $squery = mysqli_query($conn,$selectquery);
+        while ($row = $squery->fetch_assoc()) {
+            $currentLikes = $row["likes"];
+        }
+        $newLikes = (1 * $currentLikes) + 1;
+        $insertquery = "UPDATE posts SET likes='$newLikes' WHERE postID = '$postID'";
+        $iquery = mysqli_query($conn,$insertquery);
+    }
+    if (isset($_POST["like28"])) {
+        $postID = 28;
+        $selectquery = "SELECT likes FROM posts WHERE postID = '$postID'";
+        $squery = mysqli_query($conn,$selectquery);
+        while ($row = $squery->fetch_assoc()) {
+            $currentLikes = $row["likes"];
+        }
+        $newLikes = (1 * $currentLikes) + 1;
+        $insertquery = "UPDATE posts SET likes='$newLikes' WHERE postID = '$postID'";
+        $iquery = mysqli_query($conn,$insertquery);
+    }
+    if (isset($_POST["like29"])) {
+        $postID = 29;
+        $selectquery = "SELECT likes FROM posts WHERE postID = '$postID'";
+        $squery = mysqli_query($conn,$selectquery);
+        while ($row = $squery->fetch_assoc()) {
+            $currentLikes = $row["likes"];
+        }
+        $newLikes = (1 * $currentLikes) + 1;
+        $insertquery = "UPDATE posts SET likes='$newLikes' WHERE postID = '$postID'";
+        $iquery = mysqli_query($conn,$insertquery);
+    }
+    if (isset($_POST["like30"])) {
+        $postID = 30;
+        $selectquery = "SELECT likes FROM posts WHERE postID = '$postID'";
+        $squery = mysqli_query($conn,$selectquery);
+        while ($row = $squery->fetch_assoc()) {
+            $currentLikes = $row["likes"];
+        }
+        $newLikes = (1 * $currentLikes) + 1;
+        $insertquery = "UPDATE posts SET likes='$newLikes' WHERE postID = '$postID'";
         $iquery = mysqli_query($conn,$insertquery);
     }
     $followingList = array();
