@@ -4,7 +4,7 @@
 	    header("Location: index.php");
 	}
 	$username = $_SESSION["username"];
-	$toUsername = "user1"
+	$toUsername = "user1";
 	$server = "localhost";
 	$user = "root";
 	$pass = "";
