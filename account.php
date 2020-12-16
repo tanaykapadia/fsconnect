@@ -143,6 +143,56 @@
         $deletequery = "DELETE FROM posts WHERE postID = '$postID'";
         $dquery = mysqli_query($conn,$deletequery);
     }
+    if (isset($_POST["delete21"])) {
+        $postID = 21;
+        $deletequery = "DELETE FROM posts WHERE postID = '$postID'";
+        $dquery = mysqli_query($conn,$deletequery);
+    }
+    if (isset($_POST["delete22"])) {
+        $postID = 22;
+        $deletequery = "DELETE FROM posts WHERE postID = '$postID'";
+        $dquery = mysqli_query($conn,$deletequery);
+    }
+    if (isset($_POST["delete23"])) {
+        $postID = 23;
+        $deletequery = "DELETE FROM posts WHERE postID = '$postID'";
+        $dquery = mysqli_query($conn,$deletequery);
+    }
+    if (isset($_POST["delete24"])) {
+        $postID = 24;
+        $deletequery = "DELETE FROM posts WHERE postID = '$postID'";
+        $dquery = mysqli_query($conn,$deletequery);
+    }
+    if (isset($_POST["delete25"])) {
+        $postID = 25;
+        $deletequery = "DELETE FROM posts WHERE postID = '$postID'";
+        $dquery = mysqli_query($conn,$deletequery);
+    }
+    if (isset($_POST["delete26"])) {
+        $postID = 26;
+        $deletequery = "DELETE FROM posts WHERE postID = '$postID'";
+        $dquery = mysqli_query($conn,$deletequery);
+    }
+    if (isset($_POST["delete27"])) {
+        $postID = 27;
+        $deletequery = "DELETE FROM posts WHERE postID = '$postID'";
+        $dquery = mysqli_query($conn,$deletequery);
+    }
+    if (isset($_POST["delete28"])) {
+        $postID = 28;
+        $deletequery = "DELETE FROM posts WHERE postID = '$postID'";
+        $dquery = mysqli_query($conn,$deletequery);
+    }
+    if (isset($_POST["delete29"])) {
+        $postID = 29;
+        $deletequery = "DELETE FROM posts WHERE postID = '$postID'";
+        $dquery = mysqli_query($conn,$deletequery);
+    }
+    if (isset($_POST["delete30"])) {
+        $postID = 30;
+        $deletequery = "DELETE FROM posts WHERE postID = '$postID'";
+        $dquery = mysqli_query($conn,$deletequery);
+    }
     $selectquery = "SELECT * FROM posts WHERE username = '$username' ORDER BY postID DESC";
     $squery = mysqli_query($conn,$selectquery);
     if ($squery->num_rows > 0) {
